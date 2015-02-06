@@ -1,0 +1,137 @@
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo by raulsan</title>
+  
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+  <style type="text/css">
+    .starsContainer{
+    margin-top:5px;
+    position:relative;
+    text-align:center;
+    width:100%;
+    float:left;
+}
+
+.star{
+    background:url("http://i.imgur.com/Fb60U.png") no-repeat scroll left top transparent;
+    cursor:pointer;
+    height:14px;
+    position:absolute;
+    width:16px;
+}
+
+.star1{
+    margin-left:0px;
+}
+.starsContainer[user_rating='1'] .star1, .starsContainer[user_rating='2'] .star1, .starsContainer[user_rating='3'] .star1, .starsContainer[user_rating='4'] .star1, .starsContainer[user_rating='5'] .star1{
+    background:url("http://i.imgur.com/Fb60U.png") no-repeat scroll left bottom transparent;
+}
+.starsContainer[pointer_value='1']:hover .star1, .starsContainer[pointer_value='2']:hover .star1, .starsContainer[pointer_value='3']:hover .star1, .starsContainer[pointer_value='4']:hover .star1, .starsContainer[pointer_value='5']:hover .star1{
+    background:url("http://i.imgur.com/Fb60U.png") no-repeat scroll left bottom transparent !important;
+}
+
+.star2{
+    margin-left:16px;
+}
+.starsContainer[user_rating='2'] .star2, .starsContainer[user_rating='3'] .star2, .starsContainer[user_rating='4'] .star2, .starsContainer[user_rating='5'] .star2{
+    background:url("http://i.imgur.com/Fb60U.png") no-repeat scroll left bottom transparent;
+}
+.starsContainer[pointer_value='1']:hover .star2{
+    background:url("http://i.imgur.com/Fb60U.png") no-repeat scroll left top transparent !important;
+}
+.starsContainer[pointer_value='2']:hover .star2, .starsContainer[pointer_value='3']:hover .star2, .starsContainer[pointer_value='4']:hover .star2, .starsContainer[pointer_value='5']:hover .star2{
+    background:url("http://i.imgur.com/Fb60U.png") no-repeat scroll left bottom transparent !important;
+}
+
+.star3{
+    margin-left:32px;
+}
+.starsContainer[user_rating='3'] .star3, .starsContainer[user_rating='4'] .star3, .starsContainer[user_rating='5'] .star3{
+    background:url("http://i.imgur.com/Fb60U.png") no-repeat scroll left bottom transparent;
+}
+.starsContainer[pointer_value='1']:hover .star3, .starsContainer[pointer_value='2']:hover .star3{
+    background:url("http://i.imgur.com/Fb60U.png") no-repeat scroll left top transparent !important;
+}
+.starsContainer[pointer_value='3']:hover .star3, .starsContainer[pointer_value='4']:hover .star3, .starsContainer[pointer_value='5']:hover .star3{
+    background:url("http://i.imgur.com/Fb60U.png") no-repeat scroll left bottom transparent !important;
+}
+
+.star4{
+    margin-left:48px;
+}
+.starsContainer[user_rating='4'] .star4, .starsContainer[user_rating='5'] .star4{
+    background:url("http://i.imgur.com/Fb60U.png") no-repeat scroll left bottom transparent;
+}
+.starsContainer[pointer_value='1']:hover .star4, .starsContainer[pointer_value='2']:hover .star4, .starsContainer[pointer_value='3']:hover .star4{
+    background:url("http://i.imgur.com/Fb60U.png") no-repeat scroll left top transparent !important;
+}
+.starsContainer[pointer_value='4']:hover .star4, .starsContainer[pointer_value='5']:hover .star4{
+    background:url("http://i.imgur.com/Fb60U.png") no-repeat scroll left bottom transparent !important;
+}
+
+.star5{
+    margin-left:64px;
+}
+.starsContainer[user_rating='5'] .star5{
+    background:url("http://i.imgur.com/Fb60U.png") no-repeat scroll left bottom transparent;
+}
+.starsContainer[pointer_value='1']:hover .star5, .starsContainer[pointer_value='2']:hover .star5, .starsContainer[pointer_value='3']:hover .star5, .starsContainer[pointer_value='4']:hover .star5{
+    background:url("http://i.imgur.com/Fb60U.png") no-repeat scroll left top transparent !important;
+}
+.starsContainer[pointer_value='5']:hover .star5{
+    background:url("http://i.imgur.com/Fb60U.png") no-repeat scroll left bottom transparent !important;
+}
+
+  </style>
+  
+
+
+<script type="text/javascript">//<![CDATA[ 
+$(window).load(function(){
+    $('.star').live('mouseenter',function(){
+                var v = $(this).attr('value');
+                $(this).parent('.starsContainer').attr('pointer_value',v);
+    });
+        
+    //Mouse Leave from the rating container    
+    $('.starsContainer').live('mouseleave',function(){
+                $(this).attr('pointer_value','');
+    });
+
+    //Click event over a star fires the rating of the game
+    $('.star').live('click',function(){
+                var v = $(this).attr('value');
+                $(this).parent('.starsContainer').attr('user_rating',v);
+    });
+});//]]>  
+
+</script>
+
+
+</head>
+<body>
+  <div class="starsContainer" user_rating="3" pointer_value="">
+    <div class="star star1" value="1">
+    </div>
+    <div class="star star2" value="2">
+    </div>
+    <div class="star star3" value="3">
+    </div>
+    <div class="star star4" value="4">
+    </div>
+    <div class="star star5" value="5">
+    </div>
+</div>
+  
+
+
+
+
+
+</body></html>
